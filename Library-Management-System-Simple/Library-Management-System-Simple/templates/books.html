@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Books{% endblock %}
+{% block content %}<h1>Book catalogue</h1><p><a class="button" href="{{ url_for('add_book') }}">+ Add book</a></p>
+{% if books %}<table><tr><th>ID</th><th>Title</th><th>Author</th></tr>{% for book in books %}<tr><td>{{ book.id }}</td><td>{{ book.title }}</td><td>{{ book.author }}</td></tr>{% endfor %}</table>{% else %}<p>No books available, or the database is not running.</p>{% endif %}
+{% endblock %}

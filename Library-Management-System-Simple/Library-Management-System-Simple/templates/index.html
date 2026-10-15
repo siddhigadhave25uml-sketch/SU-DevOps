@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Home | Library Management{% endblock %}
+{% block content %}
+<section class="hero"><p class="tag">READ · LEARN · GROW</p><h1>Welcome to your Library</h1><p>Manage your book collection with a simple Flask and MySQL application.</p><a class="button" href="{{ url_for('books') }}">View books</a> <a class="button light" href="{{ url_for('add_book') }}">Add a book</a></section>
+<section class="cards"><article><h2>📖 Book catalogue</h2><p>Browse books stored in MySQL.</p></article><article><h2>➕ Add books</h2><p>Add titles and authors through a form.</p></article><article><h2>⚙️ DevOps</h2><p>Docker, Compose, Jenkins and Kubernetes examples.</p></article></section>
+{% endblock %}
