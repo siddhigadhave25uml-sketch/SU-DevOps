@@ -1,0 +1,11 @@
+services:
+  library:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_PATH: /data/library.db
+    volumes:
+      - library_data:/data
+volumes:
+  library_data:

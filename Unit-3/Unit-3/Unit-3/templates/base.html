@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Enterprise Library Platform{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><header><h1>Enterprise Smart Library</h1><nav>
+<a href="{{ url_for('index') }}">Dashboard</a><a href="{{ url_for('books') }}">Books</a><a href="{{ url_for('borrowers') }}">Borrowers</a><a href="{{ url_for('loans') }}">Loans & Returns</a>
+</nav></header><main>{% with messages = get_flashed_messages() %}{% if messages %}<ul class="messages">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>{% endif %}{% endwith %}
+{% block content %}{% endblock %}</main><footer>Flask · SQLite · Pytest · DevOps learning project</footer></body></html>

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: library-platform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: library-platform
+  template:
+    metadata:
+      labels:
+        app: library-platform
+    spec:
+      containers:
+        - name: library-platform
+          image: library-platform:v1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_PATH
+              value: /data/library.db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: library-platform
+spec:
+  selector:
+    app: library-platform
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30080
+  type: NodePort

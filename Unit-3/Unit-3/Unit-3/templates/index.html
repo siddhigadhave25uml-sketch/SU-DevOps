@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Library Dashboard{% endblock %}{% block content %}
+<h2>Library Dashboard</h2><p>Manage the book catalogue, borrowers, and loans.</p><div class="cards">
+<div class="card"><strong>{{ stats.books }}</strong><span>Books</span></div><div class="card"><strong>{{ stats.borrowers }}</strong><span>Borrowers</span></div>
+<div class="card"><strong>{{ stats.loans }}</strong><span>Active loans</span></div><div class="card"><strong>{{ stats.overdue }}</strong><span>Overdue loans</span></div></div>
+<p>Start by adding books and borrowers, then create loans and record returns.</p>{% endblock %}
